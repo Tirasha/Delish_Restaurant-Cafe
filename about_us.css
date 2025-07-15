@@ -1,0 +1,979 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+     font-family: "Jonst", sans-serif;
+}
+
+
+/* ======================= 1. Header Section ======================= */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.top-bar {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #111;
+    border-bottom: 1px solid #333;
+    font-size: 0.8em;
+    color: white;
+    flex-wrap: wrap;
+    gap: 10px; /* Added gap for better spacing on smaller screens */
+}
+.top-bar-left, .top-bar-right {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.top-bar p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.top-bar p i {
+    margin-right: 8px;
+    color: #cb3a1a;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #111111;
+  padding: 20px;
+  
+}
+
+/* LEFT: Logo + Text */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 25px;
+
+}
+
+
+
+.logo img {
+  height: 50px;
+  border: none;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* CENTER: Links */
+.nav-center {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #CB3A1A;
+}
+
+.arrow {
+  font-size: 0.6rem;
+}
+
+/* === Dropdowns === */
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(10px);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #CB3A1A;
+  color: white;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* RIGHT: CTA Button */
+.nav-button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid #CB3A1A;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+}
+
+.nav-button:hover {
+  background-color: #CB3A1A;
+  color: white;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .top-container,
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-center,
+  .nav-right {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+  }
+}
+
+
+/* --- Book a Table Button --- */
+.book-table-btn {
+    background-color: #cb3a1a; /* Orange color from image */
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #cb3a1a; /* Matching border */
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 30px; /* Space between last menu item and button */
+    white-space: nowrap; /* Prevents button text from wrapping */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex; /* Use flex to align text and arrow */
+    align-items: center;
+    gap: 5px; /* Space between text and arrow */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.book-table-btn:hover {
+    background-color: #e64a19; /* Slightly darker orange on hover */
+    border-color: #e64a19;
+}
+
+
+/* --- Responsive Adjustments (Crucial for smaller screens) --- */
+@media (max-width: 1200px) { /* Adjust breakpoint as needed for when wrapping occurs */
+    .main-nav-bar {
+        padding: 15px 20px; /* Reduce horizontal padding */
+    }
+
+    .main-menu ul {
+        gap: 15px; /* Reduce spacing between menu items */
+    }
+
+    .book-table-btn {
+        margin-left: 15px; /* Reduce margin */
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .main-menu a {
+        font-size: 0.9em; /* Slightly smaller font for menu items */
+    }
+}
+
+@media (max-width: 992px) { /* Tablet breakpoint - consider a hamburger menu here */
+    .main-nav-bar {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens, usually before a hamburger menu */
+        justify-content: center; /* Center items if they wrap */
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .main-menu {
+        width: 100%;
+        justify-content: center; /* Center menu items when stacked */
+        margin-bottom: 10px;
+    }
+
+    .main-menu ul {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center stacked items */
+        gap: 5px; /* Smaller gap for stacked items */
+    }
+
+    .main-menu li {
+        width: 100%; /* Make list items take full width */
+        text-align: center;
+    }
+
+    .main-menu .dropdown-menu {
+        position: static; /* Make dropdown flow naturally in the document */
+        width: 100%; /* Full width dropdown */
+        box-shadow: none;
+        border-top: none;
+        background-color: #2b2b2b; /* Slightly different background for sub-menu */
+    }
+
+    .book-table-btn {
+        width: 80%; /* Make button wider */
+        max-width: 250px;
+        margin: 10px auto; /* Center button */
+    }
+
+    /* This is where you would typically hide the main menu and show a hamburger icon */
+    /* For a fully responsive design, you'd use JavaScript to toggle a mobile menu */
+    /* .main-menu { display: none; } */
+    /* .hamburger-icon { display: block; } */
+}
+
+/* Further reduce spacing for very small mobile screens */
+@media (max-width: 576px) {
+    .main-nav-bar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .main-menu a {
+        font-size: 0.85em;
+        padding: 8px 0;
+    }
+}
+
+
+
+.page-banner {
+  background-image: url('./Images/about-us-banner.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 100px 0;
+  position: relative;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.page-banner .subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Transparent large text BELOW subtitle */
+.page-banner .bg-title {
+  font-size: 140px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.10); /* Adjust opacity here */
+  letter-spacing: 5px;
+  white-space: nowrap;
+  margin-top: 20px;
+  pointer-events: none;
+}
+
+
+.healthy-food-section {
+  padding: 80px 20px;
+ 
+}
+
+.healthy-food-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.content {
+  flex: 1 1 50%;
+}
+
+.tagline {
+  background-color: #cb3a1a;
+  color: #fff;
+  padding: 5px 15px;
+  display: inline-block;
+  font-size: 0.8em;
+  border-radius: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.main-heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.feature {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.feature img {
+  width: 50px;
+  height: auto;
+}
+
+.feature h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.feature p {
+  color: #777;
+  font-size: 0.95em;
+  max-width: 400px;
+}
+
+.book-btn {
+  padding: 12px 25px;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.book-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.image {
+  flex: 1 1 40%;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: #fff;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+  .food-gallery{
+    background-color: #F6F6F7;
+  }
+
+.g-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+     
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Section Heading (Reused from previous sections) --- */
+.food-gallery {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.sub-heading {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    background-color: #cb3a1a;
+  color: #fff;
+  padding: 5px 15px;
+  display: inline-block;
+  font-size: 0.8em;
+  border-radius: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.separator-dots {
+    font-size: 2em;
+    color: #cb3a1a;
+    letter-spacing: 8px;
+}
+
+/* --- Food Gallery Grid Layout --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between grid items */
+}
+
+/* --- Individual Grid Items --- */
+.gallery-item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Creates a perfect square aspect ratio */
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* --- Special Grid Item (Red tile) --- */
+.special-item {
+    background-color: #cb3a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.special-item i {
+    font-size: 3em;
+    color: #fff;
+    opacity: 0.8;
+}
+
+
+
+
+
+.category-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.category-item {
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px; /* Smaller fixed size */
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+}
+
+.category-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.category-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.category-content h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.category-content p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #cb3a1a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.read-more-link i {
+  margin-left: 8px;
+  transition: margin-left 0.3s ease;
+}
+
+.read-more-link:hover i {
+  margin-left: 12px;
+}
+
+/* Optional: Responsive */
+@media (max-width: 768px) {
+  .category-item {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+
+
+
+.book-a-table {
+  background-color: #d9d9d9;
+  padding: 40px 0;
+}
+
+.book-a-table .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* Left Texts */
+.book-text .small-text {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.book-text .big-text {
+  font-size: 40px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Button */
+.book-btn-wrap .book-btn {
+  padding: 12px 30px;
+  color: #fff;
+  border: 1px solid white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-btn-wrap .book-btn:hover {
+  background-color: white;
+  color: #222;
+}
+
+
+
+/* --- Site Footer --- */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #b0b0b0;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Upper Footer Content (Columns) --- */
+.footer-up-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #333; /* The full-width separator line */
+    padding-bottom: 40px; /* Space above the line */
+}
+
+/* --- Individual Columns --- */
+.footer-column {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    flex: 1 1 1 1; /* Flex-basis for column width */
+   
+}
+
+/* --- Logo & Info Section --- */
+.footer-info .footer-logo {
+    position: relative; /* Needed for the line pseudo-element */
+    margin-bottom: 25px; /* Space between logo and address */
+}
+
+/* The small red line under the logo */
+.footer-info .footer-logo::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    bottom: -15px; /* Adjust vertical position */
+    left: 0;
+}
+
+.footer-info p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* --- Social Icons --- */
+.social-icons a {
+    color: #fff;
+    background-color: #CB3A1A;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #a32e14;
+}
+
+/* --- Links Sections --- */
+.footer-links h5,
+.footer-newsletter h5 {
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* --- Newsletter Section --- */
+.footer-newsletter p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    width: 100%;
+    max-width: 250px;
+}
+
+.newsletter-form input {
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    outline: none;
+}
+
+.newsletter-form button {
+    background-color: #CB3A1A;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #a32e14;
+}
+
+/* --- Bottom Copyright Bar --- */
+.footer-bottom-bar {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 0.85em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 20px; /* Space below the separator line */
+}
+
+.footer-bottom-bar p {
+    margin: 5px 0;
+}
+
+.footer-bottom-bar .bottom-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-bar .bottom-links a:hover {
+    color: #fff;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .footer-up-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        margin-bottom: 40px;
+    }
+    
+    .footer-info .footer-logo::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom-bar .bottom-links {
+        margin-top: 10px;
+    }
+
+    .footer-bottom-bar .bottom-links a {
+        margin: 0 10px;
+    }
+}
+
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%; /* Make each column full width */
+        margin-bottom: 40px;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center icons when stacked */
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-bar .bottom-links {
+        margin-top: 10px;
+    }
+
+    .footer-bottom-bar .bottom-links a {
+        margin: 0 10px;
+    }
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

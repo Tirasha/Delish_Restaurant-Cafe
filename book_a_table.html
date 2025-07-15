@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table</title>
+    <link rel="stylesheet" href="./book_a_table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+<!-- ======================= 1. Header Section ======================= -->
+<header class="main-header">
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <p><i class="far fa-clock"></i> Mon-Wed: 10a-8p</p>
+            <p><i class="far fa-clock"></i> Thurs-Sat: 11a-10p</p>
+        </div>
+        <div class="top-bar-right">
+            <p><i class="fas fa-envelope"></i> reservations@delish.com</p>
+            <p><i class="fas fa-phone-alt"></i> +123 456 7899</p>
+            <p><i class="fas fa-map-marker-alt"></i> 216 Rixdo Avenue, New Berlin, 231524</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+      <!-- LEFT: Logo + Brand -->
+      <div class="nav-left">
+        <a href="#home" class="logo">
+          <img src="./Images/logo.png" alt="Logo" />
+        </a>
+      </div>
+
+      <!-- CENTER: Navigation -->
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="#home">HOME<span class="arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#welcome">RESERVATIONS</a></li>
+              <li><a href="#services">OUR SERVICES</a></li>
+              <li><a href="#menu">FOOD MENU</a></li>
+              <li><a href="#gallery">FOOD GALLERY</a></li>
+              <li><a href="#testimonial">TESTIMONIALS</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">PAGES<span class="arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="about_us.html">ABOUT US</a></li>
+              <li><a href="contact_us.html">CONTACT US</a></li>
+              <li><a href="our_chef.html">OUR CHEF</a></li>
+              <li><a href="chef_details.html">CHEF DETAILS</a></li>
+
+
+
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Shop <span class="arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#drinks">Drinks</a></li>
+              <li><a href="#meals">Meals</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Blog <span class="arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#news">News</a></li>
+              <li><a href="#tips">Tips</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: CTA Button -->
+      <div class="nav-right">
+        <a href="#book" class="nav-button">
+          BOOK A TABLE <span class="arrow-icon">→</span>
+        </a>
+      </div>
+    
+  
+ </nav> 
+</header>
+
+<section class="page-banner">
+  <div class="page-banner-content">
+    <h1>BOOK A TABLE</h1>
+    <h2 class="subtitle">HOME / BOOK A TABLE</h2>
+    <h2 class="bg-title">RESERVATIONS</h2> 
+  </div>
+</section>
+
+
+<section class="booking-form-section">
+    <div class="form-container">
+        <form class="book-table-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="guest-number">NUMBER OF GUEST*</label>
+                    <input type="text" id="guest-number" placeholder="Person">
+                </div>
+                <div class="form-group">
+                    <label for="select-date">SELECT DATE*</label>
+                    <input type="text" id="select-date" placeholder="Person">
+                </div>
+                <div class="form-group">
+                    <label for="select-time">SELECT TIME*</label>
+                    <input type="text" id="select-time" placeholder="Person">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="your-name">YOUR NAME*</label>
+                    <input type="text" id="your-name" placeholder="Person">
+                </div>
+                <div class="form-group">
+                    <label for="email-address">EMAIL ADDRESS*</label>
+                    <input type="text" id="email-address" placeholder="Person">
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">PHONE NUMBER*</label>
+                    <input type="text" id="phone-number" placeholder="Person">
+                </div>
+            </div>
+
+            <div class="form-row full-width-row">
+                <div class="form-group full-width">
+                    <label for="special-message">TYPE YOUR SPECIAL MESSAGE*</label>
+                    <textarea id="special-message" placeholder="Tell us more about your special message"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="book-table-btn">
+                BOOK A TABLE <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+</section>
+
+<section class="restaurant-info-section">
+    <div class="info-container">
+        <div class="info-content-wrapper">
+            <div class="image-collage">
+                <img class="main-image" src="Images/chopping-board.jpg" alt="Main food dish">
+                <img class="overlay-image" src="Images/small-burger.jpg" alt="Small burger dish">
+            </div>
+
+            <div class="info-cards-wrapper">
+                <div class="info-card">
+                    <h3>OPENING HOURS</h3>
+                    <p>
+                        Lunch 12Pm - 3Pm<br>
+                        Diner: 7Pm - 2Am (Last Order At 11.30Pm)
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>VISIT HOUR RESTAURANT</h3>
+                    <p>
+                        Eight avenue 487 NY<br>
+                        T: +22 244 0567899<br>
+                        M: fideliug@example.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="book-a-table">
+  <div class="container">
+    <div class="book-text">
+      <p class="small-text">BOOK A TABLE FOR YOUR AND FAMILY MEMBERS</p>
+      <p class="big-text">NEED A TABLE ON COFFEE HOUSE</p>
+    </div>
+    <div class="book-btn-wrap">
+      <a href="#" class="book-btn">BOOK A TABLE</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-up-content">
+                <div class="footer-column footer-info">
+                    <div class="footer-logo">
+                        <img src="./Images/f-logo.png" alt="f-logo">
+                    </div>
+                    <p>1234, Restaurant St., South City<br>New York 0124</p>
+                    <div class="social-icons">
+                        <a href="" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href=""aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-links">
+                    <h5>LINKS</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Meet our team</a></li>
+                        <li><a href="#">Case stories</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-links">
+                    <h5>OTHER LINK</h5>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Creative Agency</a></li>
+                        <li><a href="#">Digital Agency</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Digital Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-newsletter">
+                    <h5>NEWSLETTER</h5>
+                    <p>Subscribe us & receive our offers and updates your inbox directly</p>
+                    <form action="#" method="post" class="newsletter-form">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-bar">
+                    <p>&copy; All rights reserved 2024. Delish Restaurant</p>
+                    <div class="bottom-links">
+                        <a href="#">Terms Of Use</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
